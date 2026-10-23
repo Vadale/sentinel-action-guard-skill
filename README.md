@@ -2,7 +2,7 @@
 
 ![Sentinel Action Guard: Review the exact action. Approve through a separate terminal. Keep the decision on record.](assets/hero.svg)
 
-[Apache-2.0](LICENSE) · [Downloads](https://github.com/Vadale/sentinel-action-guard/releases) · [Report a problem](https://github.com/Vadale/sentinel-action-guard/issues)
+[Apache-2.0](LICENSE) · [Downloads](https://github.com/Vadale/sentinel-action-guard-skill/releases) · [Report a problem](https://github.com/Vadale/sentinel-action-guard-skill/issues)
 
 Generate a report with an AI agent, review its exact bytes in a separate terminal,
 and let the policy engine decide whether the artifact can be created.
@@ -28,7 +28,7 @@ It does not sandbox an unrestricted agent or intercept its other tools. See
 Ask the built-in installer:
 
 ```text
-$skill-installer install https://github.com/Vadale/sentinel-action-guard/tree/main/skills/sentinel-action-guard
+$skill-installer install https://github.com/Vadale/sentinel-action-guard-skill/tree/main/skills/sentinel-action-guard
 ```
 
 Or copy the complete [skills/sentinel-action-guard](skills/sentinel-action-guard) folder into
@@ -48,8 +48,8 @@ crates.io access; runtime requires no model service, API key or keychain setup.
 Start from the source checkout (the source release ZIP is an alternative):
 
 ```sh
-git clone https://github.com/Vadale/sentinel-action-guard.git
-cd sentinel-action-guard
+git clone https://github.com/Vadale/sentinel-action-guard-skill.git
+cd sentinel-action-guard-skill
 SKILL="$PWD/skills/sentinel-action-guard"
 ```
 
@@ -125,5 +125,5 @@ integration work. Cargo downloads separately licensed locked dependencies.
 
 ## Related workflows
 
-[R analysis](https://github.com/Vadale/r-statistical-analysis), [finding triage](https://github.com/Vadale/sec-graph-triage), [personal AI-project feedback](https://github.com/Vadale/ai-project-coach), [project resumption](https://github.com/Vadale/project-continuity), [sharing review](https://github.com/Vadale/publication-fit-review).
+[R analysis](https://github.com/Vadale/r-statistical-analysis-skill), [finding triage](https://github.com/Vadale/sec-graph-triage-skill), [personal AI-project feedback](https://github.com/Vadale/ai-project-coach-skill), [project resumption](https://github.com/Vadale/project-continuity-skill), [sharing review](https://github.com/Vadale/publication-fit-review-skill).
 These are independent products; none is a required companion.
