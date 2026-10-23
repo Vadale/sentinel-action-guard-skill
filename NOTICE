@@ -1,0 +1,9 @@
+Sentinel Action Guard
+Includes unchanged source from Project Guardian, commit
+c64458b0117fc74b8135450af98ea09d0636d59b, licensed under Apache-2.0.
+Attribution: Project Guardian contributors.
+
+Adaptations: workspace selection and lock resolution; new sentinel-engine
+execution/approval wrapper, Python MCP supervisor and skill documentation.
+Original source notices are preserved. Registry dependencies are downloaded
+separately by Cargo and retain their individual licenses.

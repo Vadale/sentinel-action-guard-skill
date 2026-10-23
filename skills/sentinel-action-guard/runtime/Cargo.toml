@@ -1,0 +1,52 @@
+[workspace]
+resolver = "2"
+members = ["vendor/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+authors = ["Project Guardian contributors"]
+repository = "https://github.com/Vadale/project-guardian"
+rust-version = "1.75"
+
+[workspace.dependencies]
+async-trait = "0.1"
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+anyhow = "1"
+toml = "0.8"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "signal"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+# HTTP client for the advisory Checker. http-only (no TLS) to avoid the ring/openssl
+# license surface; a local model endpoint (e.g. http://localhost:11434) is http.
+reqwest = { version = "0.12", default-features = false, features = ["json"] }
+wiremock = "0.6"
+
+
+guardian-core = { path = "vendor/guardian-core" }
+guardian-policy = { path = "vendor/guardian-policy" }
+guardian-audit = { path = "vendor/guardian-audit" }
+guardian-checker = { path = "vendor/guardian-checker" }
+guardian-broker = { path = "vendor/guardian-broker" }
+guardian-mcp-gateway = { path = "vendor/guardian-mcp-gateway" }
+
+[package]
+name = "sentinel-engine"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+
+[dependencies]
+guardian-core = { workspace = true }
+guardian-policy = { workspace = true }
+guardian-audit = { workspace = true }
+guardian-checker = { workspace = true }
+guardian-mcp-gateway = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }

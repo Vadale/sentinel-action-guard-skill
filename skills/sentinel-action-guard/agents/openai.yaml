@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sentinel Action Guard"
+  short_description: "Deliver text through a separate approval route"
+  default_prompt: "Use $sentinel-action-guard to prepare this report and deliver it through the operator-enrolled artifact slot."

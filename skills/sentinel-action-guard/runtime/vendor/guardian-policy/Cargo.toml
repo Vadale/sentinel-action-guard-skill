@@ -1,0 +1,20 @@
+[package]
+name = "guardian-policy"
+description = "Deterministic policy engine — the security boundary (allow/ask/deny)."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+guardian-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = { workspace = true }
+thiserror = { workspace = true }
+cel-interpreter = "0.10.0"
+# Signed community policy packs (§8.4): ed25519 signature over a blake3 file manifest.
+ed25519-dalek = "2"
+blake3 = "1"
+hex = "0.4"
+getrandom = "0.2"

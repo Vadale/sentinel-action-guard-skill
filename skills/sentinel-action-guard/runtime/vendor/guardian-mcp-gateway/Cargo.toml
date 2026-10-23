@@ -1,0 +1,24 @@
+[package]
+name = "guardian-mcp-gateway"
+description = "MCP proxy adapter — the primary interception point."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+guardian-core = { workspace = true }
+guardian-policy = { workspace = true }
+guardian-checker = { workspace = true }
+guardian-audit = { workspace = true }
+guardian-broker = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+async-trait = "0.1"
+tokio = { workspace = true, features = ["io-std", "io-util", "process", "sync", "macros", "rt"] }
+# Optional: the Presidio sidecar detector (ADR-0005). Off by default so the core stays
+# lean and the build pulls no HTTP client unless you opt in with `--features presidio`.
+reqwest = { workspace = true, optional = true }
+
+[features]
+presidio = ["dep:reqwest"]

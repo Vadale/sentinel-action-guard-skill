@@ -1,0 +1,6 @@
+Sentinel Action Guard includes six unchanged Project Guardian crates and two
+policy fixtures from commit c64458b0117fc74b8135450af98ea09d0636d59b.
+Project Guardian contributors; Apache-2.0, see LICENSE.
+Root workspace/lock, sentinel-engine wrapper, Python supervisor and skill
+documentation are adapted or new integration work. Downloaded registry crates
+retain their own licenses.

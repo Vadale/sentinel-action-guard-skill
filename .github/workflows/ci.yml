@@ -1,0 +1,22 @@
+name: Public package checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.15'
+      - run: python -B tests/check_package.py
+      - name: Build the declared Linux route
+        run: |
+          rustup toolchain install 1.99.1 --profile minimal
+          rustup default 1.99.1
+          python skills/sentinel-action-guard/scripts/sentinel.py build "$RUNNER_TEMP/sentinel-build"
+      - name: Exercise real allow, ask and deny
+        run: python tests/smoke.py --engine "$RUNNER_TEMP/sentinel-build/target/debug/sentinel-engine" --work "$RUNNER_TEMP/sentinel-smoke"

@@ -1,0 +1,22 @@
+name: Supported task or setup problem
+description: Report a small reproducible problem without private material.
+body:
+  - type: markdown
+    attributes:
+      value: Use fictional inputs. Do not attach credentials, conversations or private project files.
+  - type: textarea
+    id: task
+    attributes:
+      label: Task and minimal shareable input
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Host, version and relevant error

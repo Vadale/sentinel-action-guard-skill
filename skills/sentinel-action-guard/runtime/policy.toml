@@ -1,0 +1,26 @@
+version = 1
+role = "bounded-artifacts"
+
+[defaults]
+decision = "deny"
+
+[[rules]]
+id = "read-enrolled-artifact"
+when = 'action.tool == "artifact.read" && action.kind == "FileRead"'
+decision = "allow"
+
+[[rules]]
+id = "create-draft"
+when = 'action.tool == "artifact.write.allow" && action.kind == "FileWrite"'
+decision = "allow"
+
+[[rules]]
+id = "create-reviewed"
+when = 'action.tool == "artifact.write.ask" && action.kind == "FileWrite"'
+decision = "ask"
+explain = "Create exactly the artifact shown on the separate operator terminal."
+
+[[rules]]
+id = "locked-slot"
+when = 'action.tool == "artifact.write.deny"'
+decision = "deny"
