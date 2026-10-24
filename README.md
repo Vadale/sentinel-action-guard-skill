@@ -23,6 +23,26 @@ It does not sandbox an unrestricted agent or intercept its other tools. See
 
 ![Propose: Bounded UTF-8 text and an enrolled destination; Decide: Policy plus separate operator for actions that need approval; Create: Exact approved bytes or no new artifact.](assets/workflow.svg)
 
+## Install with skills.sh or Gemini CLI
+
+Use the cross-agent installer and select your host:
+
+```sh
+npx skills add Vadale/sentinel-action-guard-skill --skill sentinel-action-guard
+```
+
+Or install the Gemini CLI extension from its packaged release:
+
+```sh
+gemini extensions install https://github.com/Vadale/sentinel-action-guard-skill
+```
+
+Linux, Python, Rust/Cargo and the separate operator setup below remain required. Install the instructions first, then configure the operator-enrolled MCP tools manually. This extension starts no server and does not intercept other agent tools.
+
+Restart the assistant session and confirm the skill is visible before use.
+These packaging instructions do not establish full-workflow testing in every
+client, automatic model selection or a gallery ranking.
+
 ## Try a natural request
 
 Once this skill is installed and visible to your assistant, try:

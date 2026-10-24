@@ -1,0 +1,5 @@
+{
+  "name": "sentinel-action-guard-skill",
+  "version": "0.1.2",
+  "description": "Deliver bounded text through separately operator-enrolled Sentinel MCP approval slots. Requires Linux and manual runtime setup; not an agent sandbox."
+}
