@@ -1,6 +1,6 @@
 ---
 name: sentinel-action-guard
-description: Create and read bounded text deliverables through Sentinel MCP with operator-enrolled allow, ask and deny destinations. Use when a user wants agent-generated reports or snippets routed through a separate approval terminal. Requires the Sentinel artifact tools; covers this route only.
+description: "Deliver or read back bounded text artifacts through operator-enrolled Sentinel MCP slots with allow, ask and deny decisions. Use when a report, note or code snippet must go through that separate approval route. Requires Sentinel artifact tools; does not guard arbitrary shell, network or file actions."
 ---
 
 # Sentinel action guard

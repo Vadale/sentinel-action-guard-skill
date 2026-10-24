@@ -23,6 +23,18 @@ It does not sandbox an unrestricted agent or intercept its other tools. See
 
 ![Propose: Bounded UTF-8 text and an enrolled destination; Decide: Policy plus separate operator for actions that need approval; Create: Exact approved bytes or no new artifact.](assets/workflow.svg)
 
+## Try a natural request
+
+Once this skill is installed and visible to your assistant, try:
+
+> Prepare a short note from these facts, deliver it to the operator-enrolled reviewed slot through Sentinel, and check the readback.
+
+Bounded text routed through the enrolled MCP tools; delivery is reported only after an actual successful receipt, with pending or denied outcomes kept explicit.
+
+See the [synthetic input/output example](examples/natural-request.md) for expected
+behavior and nearby tasks that need another workflow. Automatic selection
+depends on your host and model; explicit invocation remains available.
+
 ## Install in Codex
 
 Ask the built-in installer:
