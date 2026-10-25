@@ -43,6 +43,44 @@ Restart the assistant session and confirm the skill is visible before use.
 These packaging instructions do not establish full-workflow testing in every
 client, automatic model selection or a gallery ranking.
 
+## Pi, DeepSeek Harness and Hermes
+
+These clients can load the same complete [skills/sentinel-action-guard](skills/sentinel-action-guard)
+folder. Keep its references, scripts, runtime source and licenses together;
+copying only `SKILL.md` loses required resources.
+
+**Pi:** install this repository as a Git package:
+
+```sh
+pi install git:github.com/Vadale/sentinel-action-guard-skill
+```
+
+**DeepSeek Harness (DSH):** from a reviewed checkout, copy the complete
+`skills/sentinel-action-guard` folder to `.dsh/skills/sentinel-action-guard/`
+in your target project, or to its shared `.agents/skills/sentinel-action-guard/`
+location. Choose a new destination; do not replace an existing skill silently.
+DSH needs the skill folder directly under a recognized skills root, rather than
+the whole repository nested there. See the
+[DSH skill guide](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/skills.md).
+
+**Hermes:** inspect the exact source, then install through Skills Hub:
+
+```sh
+hermes skills inspect skills-sh/Vadale/sentinel-action-guard-skill/sentinel-action-guard
+hermes skills install skills-sh/Vadale/sentinel-action-guard-skill/sentinel-action-guard
+```
+
+If catalog search has not indexed the skill, the complete folder can also be
+copied to a new `~/.hermes/skills/sentinel-action-guard/` directory
+(or your configured Hermes home). See the
+[Hermes skill guide](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills).
+
+Reload or restart the client and confirm that `sentinel-action-guard` appears.
+Native catalog/body loading was checked with Pi 1.4.0, the DSH filesystem skill
+provider 0.0.1-rc.3, and Hermes source revision `e3cc65d767e3`.
+These checks do not establish automatic selection, marketplace ranking or a
+complete model-driven workflow. The requirements and permissions below still apply.
+
 ## Try a natural request
 
 Once this skill is installed and visible to your assistant, try:
